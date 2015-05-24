@@ -12,15 +12,15 @@
 ## setinverse() - sets stored inverse value
 ## getinverse() - returns inverse value
 
-makeCacheMatrix <- function(x = matrix()) {
-      m <- NULL
+makeCacheMatrix <- function(original_matrix = matrix()) {
+      inverse_matrix <- NULL
       set <- function(y) {
-            x <<- y
-            m <<- NULL
+            original_matrix <<- y
+            inverse_matrix <<- NULL
       }
-      get <- function() x
-      setinverse <- function(inverse) m <<- inverse
-      getinverse <- function() m
+      get <- function() original_matrix
+      setinverse <- function(inverse) inverse_matrix <<- inverse
+      getinverse <- function() inverse_matrix
       list(set = set, get = get,
            setinverse = setinverse,
            getinverse = getinverse)
